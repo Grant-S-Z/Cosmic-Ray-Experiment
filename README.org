@@ -31,9 +31,8 @@
 6. Muons lose energy at a fairly constant rate of about 2 MeV per g/cm2. 只考虑电离损失：
 
    \[\Delta E = s \times \rho \times \delta E \approx 14\mathrm{TeV}.\]
-7. 
-* 探测器性质与基本信号特征实验 1
-测量暗噪声（事例率、波形、特征参数）和电子学噪声。
+* 探测器性质与基本信号特征实验
+测量暗噪声（事例率、波形、特征参数）和电子学噪声，\mu 信号（宇宙线望远镜、事例率、波形、特征参数），闪烁体能量响应、衰减长度和探测效率。
 ** 参数
 - \mu 在闪烁体中的最小电离能: 1.936 MeV cm^2 g^-1
 - 闪烁体密度: 1.03 g cm^-3
@@ -44,10 +43,7 @@
 *** PMT
 飞利浦 XP2020
 
-\begin{equation}
-\label{eq:1}
-i_{dark} \sim T^{5/4}e^{-\frac{e\psi}{kT}}.
-\end{equation}
+\[i_{dark} \sim T^{5/4}e^{-\frac{e\psi}{kT}}.\]
 
 结构包含采光面窗口、光阴极、电子倍增部分和后部的分压器、读出与基座部分。
 
@@ -104,24 +100,16 @@ i_{dark} \sim T^{5/4}e^{-\frac{e\psi}{kT}}.
 *** 信号计数率
 # 通过测量计算信号计数率对应 \mu 通量并与理论通量比较，调节阈值。
 
-最终得到
 599 hits min^-1.
 
 *** 衰减长度
-| Q_1 | Q_2 | t_1(ms) | t_2 |
-|----+----+--------+----|
-|    |    |        |    |
+# | Q_1 | Q_2 | t_1(ms) | t_2 |
+# |----+----+--------+----|
+# |    |    |        |    |
 
-* 探测器性质与基本信号特征实验 2
-测量 \mu 信号（宇宙线望远镜、事例率、波形、特征参数）。
-* 探测器性质与基本信号特征实验 3
-测量闪烁体能量响应、衰减长度和探测效率。
-* 物理实验 1
-测量宇宙线 \mu 通量和角分布。
-* 物理实验 2
-测量 \mu 寿命。
-* 物理实验 3
-Michael 电子能谱测量。
+* 物理实验 1: 测量 \mu 通量和角分布
+* 物理实验 2: 测量 \mu 寿命
+* 物理实验 3: Michael 电子能谱测量
 * References
 1. [[https://era.library.ualberta.ca/items/10813ee8-3b2e-416c-88d2-62ebc976b606/view/648bb639-4b0b-448f-9042-80818bc9fa6a/Singhrao_Kamal_201509_MSc.pdf]]
 2. [[https://cosmic.lbl.gov/SKliewer/Cosmic_Rays/Muons.htm]]
