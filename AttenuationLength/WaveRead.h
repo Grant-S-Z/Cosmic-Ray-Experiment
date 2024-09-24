@@ -19,79 +19,79 @@
 #include <string.h>
 using namespace std;
 
-class waveform{
+class datawaveform{
     public:
     float_t tlist[1000];
     float_t ch1list[1000];
     float_t ch2list[1000];
-    waveform(int_t a);
-    floa_t gett1(void);
-    floa_t gett2(void);
-    floa_t getq1(void);
-    floa_t getq2(void);
-    ~waveform();
+    datawaveform(Int_t a);
+    float_t gett1(void);
+    float_t gett2(void);
+    float_t getq1(void);
+    float_t getq2(void);
+    ~datawaveform();
 }
 
-waveform::waveform(int_t a){
-    string FilePath=Form("/home/wangyp/exptdata/comsicrayexpt/data/lengtha%d",a);
+datawaveform::datawaveform(Int_t a){
+    string dataFilePath=Form("/exptdata/CosmicRayExperiment/ExperimentData/AttenuationLength/lengtha%d",a);
     ifstream ifile(FilePath, ios::app);
-    string temp;
-    int_t i=0;
+    string stemp;
+    Int_t j=0;
     
-    while(getline(ifile,temp)){
-        string[3] arr=temp.split(',');
+    while(getline(ifile,stemp)){
+        string arr[3]=temp.split(',');
         if (arr[0]!='Time(s)'){
-            tlist[i]=stof(arr[0]);
-            ch1list[i]=stof(arr[1]);
-            ch2list[i]=stof(arr[2]);
-            i++;
+            tlist[j]=stof(arr[0]);
+            ch1list[j]=stof(arr[1]);
+            ch2list[j]=stof(arr[2]);
+            j++;
         }
-        if(i=1000){
+        if(j=1000){
             break;
         }
     }
     ifile.close();
 }
-float_t waveform::gett1(){
+float_t datawaveform::gett1(){
     TGraph* g1=new TGraph(1000,tlist,ch1list);
-    float_t vmax=g1.GetMaximum ();
-    float_t vmin=g1.GetMinimum ();
+    float_t vmax=g1->GetMaximum ();
+    float_t vmin=g1->GetMinimum ();
     float_t trigger=0.9*vmax+0.1*vmin;
     float_t tbegin=tlist[500];
     for (int i=0;i<1000;i++){
         if (ch1list[i]<trigger){
             tbegin=tlist[i];
-            g1->delete();
+            g1->Delete();
             return tbegin;
         }
     }
 }
 
-float_t waveform::gett2(){
+float_t datawaveform::gett2(){
     TGraph* g2=new TGraph(1000,tlist,ch2list);
-    float_t vmax=g2.GetMaximum();
-    float_t vmin=g2.GetMinimum();
+    float_t vmax=g2->GetMaximum();
+    float_t vmin=g2->GetMinimum();
     float_t trigger=0.9*vmax+0.1*vmin;
     float_t tbegin=tlist[500];
     for (int i=0;i<1000;i++){
         if (ch2list[i]<trigger){
             tbegin=tlist[i];
-            g2->delete();
+            g2->Delete();
             return tbegin;
         }
     }
 }
 
-float_t waveform::getq1(){
+float_t datawaveform::getq1(){
     TGraph* g1=new TGraph(1000,tlist,ch1list);
-    float_t vmax=g1.GetMaximum ();
-    float_t vmin=g1.GetMinimum ();
+    float_t vmax=g1->GetMaximum ();
+    float_t vmin=g1->GetMinimum ();
     float_t trigger=0.9*vmax+0.1*vmin;
-    int_t tbegin=500;
-    int_t tend=750;
+    Int_t tbegin=500;
+    Int_t tend=750;
     float_t baseline=vmax;
     float_t total=0;
-    for (int i=0;i<250,i++){
+    for (int i=0;i<250;i++){
         total+=ch1list[i];
     }
     baseline=total/250;
@@ -103,24 +103,24 @@ float_t waveform::getq1(){
             break;
         }
     }
-    float1 q1=0;
+    float_t q1=0;
     for (int i=tbegin;i<=tend;i++){
         q1+=(tlist[i+1]=tlist[i])*(baseline-ch1list[i]);
     }
-    g1->delete();
+    g1->Delete();
     return q1;
 }
 
-float_t waveform::getq2(){
+float_t datawaveform::getq2(){
     TGraph* g1=new TGraph(1000,tlist,ch2list);
-    float_t vmax=g1.GetMaximum ();
-    float_t vmin=g1.GetMinimum ();
+    float_t vmax=g1->GetMaximum ();
+    float_t vmin=g1->GetMinimum ();
     float_t trigger=0.9*vmax+0.1*vmin;
-    int_t tbegin=500;
-    int_t tend=750;
+    Int_t tbegin=500;
+    Int_t tend=750;
     float_t baseline=vmax;
     float_t total=0;
-    for (int i=0;i<250,i++){
+    for (int i=0;i<250;i++){
         total+=ch2list[i];
     }
     baseline=total/250;
@@ -132,11 +132,11 @@ float_t waveform::getq2(){
             break;
         }
     }
-    float1 q1=0;
+    float_t q1=0;
     for (int i=tbegin;i<=tend;i++){
         q1+=(tlist[i+1]=tlist[i])*(baseline-ch1list[i]);
     }
-    g1->delete();
+    g1->Delete();
     return q1;
 }
 
