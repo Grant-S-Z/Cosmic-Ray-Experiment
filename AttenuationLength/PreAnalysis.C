@@ -8,7 +8,7 @@
 #include "TClass.h"
 #include "TVector3.h"
 #include "TCanvas.h"
-#include "./WaveRead.h"
+#include "WaveRead.h"
 #include <cstdlib>
 #include <vector>
 #include <map>
@@ -26,8 +26,8 @@ int main(){
     wavedata->Branch("t1",&t1);
     wavedata->Branch("t2",&t2);
 
-    for(int_t i=0;i<=40;i++){
-        waveform a=dataread(i);
+    for(Int_t i=0;i<=40;i++){
+        datawaveform a=datawaveform(i);
         q1=a.getq1();
         q2=a.getq1();
         t1=a.gett1();
