@@ -1,0 +1,112 @@
+#+LANGUAGE: cn
+#+OPTIONS: H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+startup: beamer
+
+#+LATEX_CLASS: beamer
+
+#+LATEX_HEADER: \usepackage{etoolbox}
+#+LATEX_HEADER: \usepackage{pgfopts}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[scale=2]{ccicons}
+
+#+LATEX_HEADER: \usetheme[block=fill, progressbar=frametitle]{metropolis}
+#+LATEX_HEADER: \useoutertheme{infolines} % 采用 infoline
+#+LATEX_HEADER: \useinnertheme{default}
+#+LATEX_HEADER: \usecolortheme{custom} % 使用 custom 颜色主题
+
+#+LATEX_HEADER: \setbeamertemplate{blocks}[rounded][shadow=false]
+#+LATEX_HEADER: \setbeamertemplate{items}[circle] % circle item symbol
+#+LATEX_HEADER: \setbeamertemplate{sections/subsections in toc}[ball] % ball section symbol
+#+LATEX_HEADER: \setbeamertemplate{headline}[default] % 不使用 infoline 的 headline
+#+LATEX_HEADER: %\setbeamertemplate{footline}[default] % 使用 infoline 的 footline
+#+LATEX_HEADER: \setbeamertemplate{frame numbering}[none]
+#+LATEX_HEADER: \setbeamertemplate{bibliography item}[text] % 使用 text 的 references 形式
+#+LATEX_HEADER: %\setbeamerfont{footnote}{\tiny} % 可选择 tiny footnote
+
+#+TITLE: 噪声和闪烁光衰减长度测量
+#+SUBTITLE: 宇宙线粒子探测与物理实验
+#+AUTHOR: 王亚朋 \quad 朱宇涛
+#+DATE: 2024年10月10日
+** 目录
+#+begin_export latex
+\tableofcontents
+#+end_export
+* 实验目标
+** 实验目标
+在本次实验中我们希望\cite{高能宇宙线粒子探测:online}：
+1. 了解宇宙线的成因与特点；
+2. 掌握探测原理与探测器的使用方法；
+3. 熟悉数据获取与处理的基本方式；
+4. 观察噪声特征，测量闪烁光衰减长度。
+* 实验过程
+** 暗噪声测量
+#+caption: 暗噪声，根据一组测量数据作图。
+#+attr_latex: :width 0.5\textwidth
+[[../AttenuationLength/figs/DarkNoise.png]]
+
+通过示波器的频率显示，测量并取平均，得到暗噪声计数率\(n_d \approx \qty{16.02}{s^{-1}}\).
+
+** 电子学噪声测量
+#+caption: 电子学噪声。
+#+attr_latex: :width 0.6\textwidth
+[[../ExperimentData/figs/elenoise0.png]]
+** \(\mu\)子信号测量
+#+caption: \(\mu\)子信号。
+#+attr_latex: :width 0.6\textwidth
+[[../ExperimentData/figs/musignal0.png]]
+
+测量得到信号计数率 \(n_s \approx \qty{9.98}{s^{-1}}\).
+** 闪烁光衰减长度测量
+我们知道，光在闪烁体中传播时按指数衰减：
+\begin{equation}
+\label{eq:1}
+q = q_0 e^{-\frac{L}{L_0}},
+\end{equation}
+其中\(q_0\)为初始光子数，\(q\)为传播距离\(L\)后的光子数，\(L_0\)是闪烁体的光衰减长度。
+
+为测量\(L_0\), 我们对闪烁体两端的光信号作符合测量，分别得到两端信号的触发时间和幅度，进而确定信号的时间差和电荷量之比。
+
+由上推导得到：
+\begin{equation}
+\label{eq:2}
+\ln \frac{q_1}{q_2} = -\frac{c}{L_0}(t_1 - t_2),
+\end{equation}
+通过线性拟合即可实现衰减长度的测量。
+
+** 闪烁光衰减后信号符合波形
+*** Wavefont00 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+caption: Wavefont00.
+#+attr_latex: :width \textwidth
+[[../AttenuationLength/figs/Wavefont00.png]]
+*** Wavefont03 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+caption: Wavefont03.
+#+attr_latex: :width \textwidth
+[[../AttenuationLength/figs/Wavefont03.png]]
+
+* 结果分析
+** 电荷比值与时间分布
+#+caption: 电荷比值的自然对数与时间差的分布，以及线性拟合结果。
+#+attr_latex: :width 0.5\textwidth
+[[../AttenuationLength/figs/dist.png]]
+
+根据拟合结果可计算得
+\begin{equation}
+\label{eq:3}
+L_0 \approx \qty{1.305}{m}.
+\end{equation}
+** 不确定度分析
+线性拟合相关系数 \(R^2 \approx 0.442\), 相对不确定度为 0.180.
+* 参考文献
+#+begin_export latex
+\begin{frame}[allowframebreaks]{参考文献}
+\bibliographystyle{abbrv} % tiny is not good
+\bibliography{reference.bib} % 参考文献存放在 "./reference.bib"
+\end{frame}
+#+end_export

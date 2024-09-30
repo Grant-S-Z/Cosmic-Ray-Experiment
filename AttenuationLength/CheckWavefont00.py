@@ -19,6 +19,6 @@ plt.legend()
 plt.xlabel("Time")
 plt.ylabel("Voltage")
 plt.title("Wavefont00")
-plt.savefig("../img/CheckWavefont00.png")
+plt.savefig("./figs/CheckWavefont00.png")
 
 print("End")
