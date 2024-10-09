@@ -108,16 +108,16 @@ linkcolor=black
 我们知道，光在闪烁体中传播时按指数衰减：
 \begin{equation}
 \label{eq:1}
-q = q_0 e^{-\frac{L}{L_0}},
+q = Q_0 e^{-\frac{L}{L_0}},
 \end{equation}
-其中\(q_0\)为初始光子数，\(q\)为传播距离\(L\)后的光子数，\(L_0\)是闪烁体的光衰减长度。
+其中\(Q_0\)为初始光子数，\(q\)为传播距离\(L\)后的光子数，\(L_0\)是闪烁体的光衰减长度。
 
 为测量\(L_0\), 我们对闪烁体两端的光信号作符合测量，分别得到两端信号的触发时间和幅度，进而确定信号的时间差和电荷量之比。
 
 由上推导得到：
 \begin{equation}
 \label{eq:2}
-\ln \frac{q_1}{q_2} = -\frac{c}{L_0}(t_1 - t_2),
+\ln \frac{q_1}{q_2} = -\frac{c}{L_0}(t_1 - t_2+\Delta \mathrm{TOF}),
 \end{equation}
 通过线性拟合即可实现衰减长度的测量。
 \end{frame}
@@ -157,7 +157,22 @@ L_0 \approx \qty{1.305}{m}.
 \end{equation}
 \end{frame}
 \begin{frame}[label={sec:orgd4b6778}]{不确定度分析}
-线性拟合相关系数 \(R^2 \approx 0.442\), 相对不确定度为 0.180.
+线性拟合相关系数 \(R^2 \approx 0.442\), 相对统计不确定度为 0.180.
+\end{frame}
+\begin{frame}{系统不确定度}
+    考虑系统不确定度，主要分为荧光光子衰减，光电子倍增，示波器的时间分辨与电压分辨率几部分：
+
+    忽略光电子倍增与电荷分辨的不确定度，光子衰减的相对不确定度为
+    $$\sigma_\mathrm{photon}=\sqrt{\frac{2p_1(1-p_1)}{N}+\frac{2p_1(1-p_1)}{N}}$$
+
+    其中$p_1,p_2$分别为两端的光子幸存率，$N$为事例产生的总光子数。估计为
+
+    示波器的时间分辨率为$\Delta t=0.5\mathrm{ns}$,将时间分布视为均匀分布，时间差的不确定度为
+
+    $$\frac{\Delta t}{\sqrt{6}}$$
+
+    对应的相对不确定度为$\sigma_t=\frac{\Delta tc}{\sqrt{6}nL_0}=0.047.$
+
 \end{frame}
 \section{参考文献}
 \label{sec:orgf6ca842}
