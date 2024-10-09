@@ -45,7 +45,7 @@
 %\setbeamerfont{footnote}{\tiny} % 可选择 tiny footnote
 \usetheme{default}
 \author{王亚朋 \quad 朱宇涛}
-\date{2024年10月10日}
+\date{2024 年 10 月 10 日}
 \title{噪声和闪烁光衰减长度测量}
 \subtitle{宇宙线粒子探测与物理实验}
 
@@ -117,9 +117,9 @@ q = Q_0 e^{-\frac{L}{L_0}},
 由上推导得到：
 \begin{equation}
 \label{eq:2}
-\ln \frac{q_1}{q_2} = -\frac{c}{L_0}(t_1 - t_2+\Delta \mathrm{TOF}),
+\ln \frac{q_1}{q_2} = -\frac{c}{nL_0}(t_1 - t_2+\Delta \mathrm{TOF}),
 \end{equation}
-通过线性拟合即可实现衰减长度的测量。
+其中\(n=1.583\). 进而可通过线性拟合实现衰减长度的测量。
 \end{frame}
 
 \begin{frame}[label={sec:orgecbe44e}]{闪烁光衰减后信号符合波形}
@@ -146,32 +146,33 @@ q = Q_0 e^{-\frac{L}{L_0}},
 \begin{frame}[label={sec:org93946de}]{电荷比值与时间分布}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{../AttenuationLength/figs/dist.png}
+\includegraphics[width=0.4\textwidth]{../AttenuationLength/figs/dist.png}
 \caption{电荷比值的自然对数与时间差的分布，以及线性拟合结果。}
 \end{figure}
 
 根据拟合结果可计算得
 \begin{equation}
 \label{eq:3}
-L_0 \approx \qty{1.305}{m}.
+L_0 \approx \qty{0.83}{m}.
 \end{equation}
-\end{frame}
-\begin{frame}[label={sec:orgd4b6778}]{不确定度分析}
+
 线性拟合相关系数 \(R^2 \approx 0.442\), 相对统计不确定度为 0.180.
 \end{frame}
+
 \begin{frame}{系统不确定度}
     考虑系统不确定度，主要分为荧光光子衰减，光电子倍增，示波器的时间分辨与电压分辨率几部分：
 
     忽略光电子倍增与电荷分辨的不确定度，光子衰减的相对不确定度为
-    $$\sigma_\mathrm{photon}=\sqrt{\frac{2p_1(1-p_1)}{N}+\frac{2p_1(1-p_1)}{N}}$$
 
+    \begin{equation}
+    \label{eq:4}
+    \sigma_\mathrm{photon}=\sqrt{\frac{2p_1(1-p_1)}{N}+\frac{2p_1(1-p_1)}{N}},
+    \end{equation}
     其中$p_1,p_2$分别为两端的光子幸存率，$N$为事例产生的总光子数。
     
-    假设总光子数100,估计相对不确定度为0.100。
+    假设总光子数 100,估计相对不确定度为 0.100。
 
-    示波器的时间分辨率为$\Delta t=0.5\mathrm{ns}$,将时间分布视为均匀分布，时间差的不确定度为
-
-    $$\frac{\Delta t}{\sqrt{6}}$$
+    示波器的时间分辨率为$\Delta t=0.5\mathrm{ns}$,将时间分布视为均匀分布，时间差的不确定度为 $\frac{\Delta t}{\sqrt{6}}$.
 
     对应的相对不确定度为$\sigma_t=\frac{\Delta tc}{\sqrt{6}nL_0}=0.047.$
 
