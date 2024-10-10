@@ -44,7 +44,7 @@
 \setbeamertemplate{bibliography item}[text] % 使用 text 的 references 形式
 %\setbeamerfont{footnote}{\tiny} % 可选择 tiny footnote
 \usetheme{default}
-\author{王亚朋 \quad 朱宇涛}
+\author{王亚朋 \quad 报告人：朱宇涛}
 \date{2024 年 10 月 10 日}
 \title{噪声和闪烁光衰减长度测量}
 \subtitle{宇宙线粒子探测与物理实验}
@@ -117,7 +117,7 @@ q = Q_0 e^{-\frac{L}{L_0}},
 由上推导得到：
 \begin{equation}
 \label{eq:2}
-\ln \frac{q_1}{q_2} = -\frac{c}{nL_0}(t_1 - t_2+\Delta \mathrm{TOF}),
+\ln \frac{q_1}{q_2} = -\frac{c}{nL_0}(t_1 - t_2+\Delta t_E),
 \end{equation}
 其中\(n=1.583\). 进而可通过线性拟合实现衰减长度的测量。
 \end{frame}
@@ -166,7 +166,7 @@ L_0 \approx \qty{0.83}{m}.
 
     \begin{equation}
     \label{eq:4}
-    \sigma_\mathrm{photon}=\sqrt{\frac{2p_1(1-p_1)}{N}+\frac{2p_1(1-p_1)}{N}},
+    \sigma_\mathrm{photon}=\sqrt{\frac{2p_1(1-p_1)}{N}+\frac{2p_2(1-p_2)}{N}},
     \end{equation}
     其中$p_1,p_2$分别为两端的光子幸存率，$N$为事例产生的总光子数。
     
