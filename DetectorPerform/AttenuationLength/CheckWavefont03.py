@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Check wavefont
-df = pd.read_csv("../ExperimentData/AttenuationLength/Lengtha0.csv")
+df = pd.read_csv("../../ExperimentData/AttenuationLength/Lengtha3.csv")
 t = df['Time(s)'].values
 ch1 = df['CH1V'].values
 ch2 = df['CH2V'].values
@@ -18,7 +18,7 @@ plt.plot(t, ch2, '-r', label='ch2')
 plt.legend()
 plt.xlabel("Time")
 plt.ylabel("Voltage")
-plt.title("Wavefont00")
-plt.savefig("./figs/CheckWavefont00.png")
+plt.title("Wavefont03")
+plt.savefig("./figs/CheckWavefont03.png")
 
 print("End")

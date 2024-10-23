@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Check wavefont
-df = pd.read_csv("../ExperimentData/darknoise/darknoise0.csv")
+df = pd.read_csv("../../ExperimentData/darknoise/darknoise0.csv")
 t = df['Time(s)'].values
 ch1 = df['CH1V'].values
 

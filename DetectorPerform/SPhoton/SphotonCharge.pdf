@@ -1,0 +1,14 @@
+{
+//========= Macro generated from object: Graph/Graph
+//========= by ROOT version6.32.06
+   
+   Double_t Graph_fx1001[8] = { 0, 1, 2, 3, 4, 5, 6, 7 };
+   Double_t Graph_fy1001[8] = { 1.60584e-11, 1.65938e-11, 1.31417e-11, 2.09581e-11, 1.60873e-11, 1.31629e-11, 1.31629e-11, 1.56472e-11 };
+   Double_t Graph_fex1001[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+   Double_t Graph_fey1001[8] = { 1.33916e-08, 1.36163e-08, 1.27068e-08, 1.46776e-08, 1.22399e-08, 1.28792e-08, 1.28792e-08, 1.21661e-08 };
+   TGraphErrors *gre = new TGraphErrors(8,Graph_fx1001,Graph_fy1001,Graph_fex1001,Graph_fey1001);
+   gre->SetName("Graph");
+   gre->SetTitle("Graph");
+   gre->SetFillStyle(1000);
+   gre->Draw("");
+}
