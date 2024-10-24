@@ -1,0 +1,147 @@
+#+LANGUAGE: cn
+#+OPTIONS: H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+startup: beamer
+
+#+LATEX_CLASS: beamer
+
+#+LATEX_HEADER: \usepackage{etoolbox}
+#+LATEX_HEADER: \usepackage{pgfopts}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[scale=2]{ccicons}
+
+#+LATEX_HEADER: \usetheme[block=fill, progressbar=frametitle]{metropolis}
+#+LATEX_HEADER: \useoutertheme{infolines} % 采用 infoline
+#+LATEX_HEADER: \useinnertheme{default}
+#+LATEX_HEADER: \usecolortheme{custom} % 使用 custom 颜色主题
+
+#+LATEX_HEADER: \setbeamertemplate{blocks}[rounded][shadow=false]
+#+LATEX_HEADER: \setbeamertemplate{items}[circle] % circle item symbol
+#+LATEX_HEADER: \setbeamertemplate{sections/subsections in toc}[ball] % ball section symbol
+#+LATEX_HEADER: \setbeamertemplate{headline}[default] % 不使用 infoline 的 headline
+#+LATEX_HEADER: %\setbeamertemplate{footline}[default] % 使用 infoline 的 footline
+#+LATEX_HEADER: \setbeamertemplate{frame numbering}[none]
+#+LATEX_HEADER: \setbeamertemplate{bibliography item}[text] % 使用 text 的 references 形式
+#+LATEX_HEADER: %\setbeamerfont{footnote}{\tiny} % 可选择 tiny footnote
+
+#+TITLE: 能量刻度与\(\mu\)寿命测量
+#+SUBTITLE: 宇宙线粒子探测与物理实验
+#+AUTHOR: 朱宇涛 \quad 报告人：王亚朋
+#+DATE: 2024年10月24日
+** 目录
+#+begin_export latex
+\tableofcontents
+#+end_export
+* 实验目标
+** 实验目标
+1. 重新测量暗噪声、电子学噪声、\mu 信号与余波的一些参数；
+2. 测量单光子电荷；
+3. 进行能量刻度；
+4. 测量 \mu 寿命。
+* 实验结果
+** 噪声
+在 1500V 电压下进行实验, 得到:
+- 暗噪声频率 \(f_{d} \approx \qty{10.04}{Hz}\).
+- 电子学噪声振幅 \qty{0.5}{mV}.
+  
+** \mu 信号参数
+使用甄别器的 4、7 道（甄别电压 \qty{15}{mV}），测量符合信号。[fn:1]
+
+- 左：电压 1350V.
+
+  信号宽度：\(\Delta X(\mr{CH1}) = \qty{43.4}{ns}\).
+
+  计数率：\(n(\mr{CH1}) = \qty{2995}{min^{-1}}\).
+
+- 右：电压 1500V.
+
+  信号宽度：\(\Delta X(\mr{CH2}) = \qty{38.4}{ns}\).
+
+  计数率：\(n(\mr{CH2}) = \qty{2014}{min^{-1}}\).
+
+- 符合
+
+  计数率：\(n = \qty{859}{min^{-1}}\).
+
+同时计算得到偶然符合计数率
+
+\begin{equation}
+\label{eq:1}
+n_a = \qty{0.176}{min^{-1}}.
+\end{equation}
+
+** 余波时间分布
+*** P1 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 1.0\textwidth
+#+caption: 所有信号的余波分布
+[[../../img/afterPulse01.pdf]]
+
+*** P2 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 1.0\textwidth
+#+caption: 存在余波信号的余波分布
+[[../../img/afterPulse02.pdf]]
+
+** 单光子电荷
+#+attr_latex: :width 0.6\textwidth
+#+caption: 单光子电荷
+[[../../DetectorPerform/SPhoton/SphotonCharge.pdf]]
+
+- 单光子电荷量: (1.560 \pm 0.245)\times\qty{e-11}{V\cdot s}
+
+** 衰减长度
+考虑 Error Bar, 重新计算了衰减长度与相关系数:
+
+\begin{align}
+\label{eq:3}
+L &= 1.643 \pm \qty{0.131}{m} \\
+\rho &= 0.442.
+\end{align}
+
+不确定度优于上次结果.
+
+*** pic1 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 1.0\textwidth
+#+caption: 衰减长度
+[[../../DetectorPerform/AttenuationLength/figs/Dist.png]]
+
+***  pic2 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 1.0\textwidth
+#+caption: 衰减长度
+[[../../DetectorPerform/AttenuationLength/figs/AttenuationLength.pdf]]
+
+** 能量刻度
+#+attr_latex: :width 0.7\textwidth
+#+caption: 能量刻度
+[[../../DetectorPerform/ECali/qqdist.pdf]]
+
+** \mu 寿命
+*** pic :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 1.0\textwidth
+#+caption: \mu 寿命
+[[../../img/lifeTimeHist.pdf]]
+
+*** content :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+- 测量时长: 56min.
+- 测得 \mu 寿命: \(\tau = 2.026 \pm \qty{0.534}{\mu s}\).
+
+* Footnotes
+
+[fn:1]后续测量与测量 \mu 信号的实验条件一致. 

@@ -43,7 +43,7 @@ for i in range(0,8):
 
 SphotonCharge=np.average(y.data())
 SphotonError=np.std(y.data())
-print(SphotonCharge,SphotonError)
+print("Single photon charge:", SphotonCharge, "\nError:", SphotonError)
 a=rt.TGraphErrors(8,x.data(),y.data(),xe.data(),ye.data())
 #a.SaveAs("SphotonCharge.pdf")
 a.SetTitle("SphotonChargeDistribution")
