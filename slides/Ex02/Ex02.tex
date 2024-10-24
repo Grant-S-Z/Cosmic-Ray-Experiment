@@ -1,4 +1,4 @@
-% Created 2024-10-24 Thu 14:42
+% Created 2024-10-24 Thu 17:07
 % Intended LaTeX compiler: xelatex
 
 \documentclass[10pt]{beamer}
@@ -69,30 +69,31 @@ linkcolor=black
 \begin{document}
 
 \maketitle
-\begin{frame}[label={sec:org4131aa9}]{目录}
+\begin{frame}[label={sec:orgba24ec1}]{目录}
 \tableofcontents
 \end{frame}
 \section{实验目标}
-\label{sec:org2656d76}
-\begin{frame}[label={sec:org6dd33f6}]{实验目标}
+\label{sec:org8985ec5}
+\begin{frame}[label={sec:org1c7c6fd}]{实验目标}
 \begin{enumerate}
-\item 重新测量暗噪声、电子学噪声、\(\mu\) 信号与余波的一些参数；
+\item 重新测量 \(\mu\) 信号与余波的一些参数；
 \item 测量单光子电荷；
 \item 进行能量刻度；
 \item 测量 \(\mu\) 寿命。
 \end{enumerate}
 \end{frame}
-\section{实验结果}
-\label{sec:orgc4cd6a9}
-\begin{frame}[label={sec:org3d1d317}]{噪声}
-在 1500V 电压下进行实验, 得到:
-\begin{itemize}
-\item 暗噪声频率 \(f_{d} \approx \qty{10.04}{Hz}\).
-\item 电子学噪声振幅 \qty{0.5}{mV}.
-\end{itemize}
+\section{实验装置}
+\label{sec:org0b80238}
+\begin{frame}[label={sec:org1295a78}]{实验装置}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{img/Ex02_20241024164303.png}
+\caption{实验装置}
+\end{figure}
 \end{frame}
-
-\begin{frame}[label={sec:orge0d7b3a}]{\(\mu\) 信号参数}
+\section{实验结果}
+\label{sec:orgb264ad9}
+\begin{frame}[label={sec:org416cb2e}]{\(\mu\) 信号测量}
 使用甄别器的 4、7 道（甄别电压 \qty{15}{mV}），测量符合信号。\footnote{后续实验条件不变.}
 
 \begin{itemize}
@@ -113,19 +114,30 @@ linkcolor=black
 计数率：\(n = \qty{859}{min^{-1}}\).
 \end{itemize}
 
-同时计算得到偶然符合计数率:
+计算得到偶然符合计数率:
 \begin{equation}
 \label{eq:1}
 n_a = \qty{0.176}{min^{-1}}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:orge5b5599}]{余波时间分布}
+\begin{frame}[label={sec:org748ef9b}]{\(\mu\) 信号测量}
+对闪烁体, 测得长 60.5cm, 宽 15.5cm, 由此可计算 \(\mu\) 通量:
+
+\begin{equation}
+\label{eq:2}
+\phi_{\mu} = 0.916 \pm \qty{0.031}{min^{-1}cm^{-2}}.
+\end{equation}
+\end{frame}
+
+\begin{frame}[label={sec:orgcc25359}]{余波时间分布}
+余波出现的概率为 13.9\%.
+
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1.0\textwidth]{../../img/afterPulse01.pdf}
+\includegraphics[width=0.9\textwidth]{../../img/afterPulse01.pdf}
 \caption{所有信号的余波分布}
 \end{figure}
 \end{column}
@@ -133,24 +145,24 @@ n_a = \qty{0.176}{min^{-1}}.
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1.0\textwidth]{../../img/afterPulse02.pdf}
+\includegraphics[width=0.9\textwidth]{../../img/afterPulse02.pdf}
 \caption{存在余波信号的余波分布}
 \end{figure}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org407aa4f}]{余波时间分布}
-对余波分布作指数拟合:
+\begin{frame}[label={sec:org60cad64}]{余波时间分布}
+余波时间分布比较符合指数规律, 对其作拟合得到:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{../../img/afterPulse02r.pdf}
+\includegraphics[width=0.6\textwidth]{../../img/afterPulse02r.pdf}
 \caption{余波分布拟合}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org84092e3}]{单光子电荷}
+\begin{frame}[label={sec:orgb3c9fe6}]{单光子电荷}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{../../DetectorPerform/SPhoton/SphotonCharge.pdf}
@@ -164,7 +176,7 @@ q = (1.560 \pm 0.245)\times\qty{e-11}{V\cdot s}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:org3adb80b}]{衰减长度}
+\begin{frame}[label={sec:orgfcb3e5f}]{衰减长度}
 考虑 Error Bar, 重新计算衰减长度\footnote{不确定度优于上次结果 (0.1494m).}与相关系数:
 \begin{align}
 \label{eq:3}
@@ -191,7 +203,7 @@ L &= 1.643 \pm \qty{0.131}{m} \\
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org2ad09ad}]{能量刻度}
+\begin{frame}[label={sec:org732602a}]{能量刻度}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{../../DetectorPerform/ECali/qqdist.pdf}
@@ -206,7 +218,7 @@ L &= 1.643 \pm \qty{0.131}{m} \\
 \end{frame}
 
 
-\begin{frame}[label={sec:org07cdd48}]{\(\mu\) 寿命}
+\begin{frame}[label={sec:org6b888d2}]{\(\mu\) 寿命}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]

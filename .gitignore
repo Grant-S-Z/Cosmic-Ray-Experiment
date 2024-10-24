@@ -5,3 +5,4 @@ slides/auto/*
 slides/.DS_Store
 slides/*.bbl
 slides/*.log
+slides/Ex*/ltximg
