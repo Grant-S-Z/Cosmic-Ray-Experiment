@@ -238,8 +238,9 @@ Both afterpulse and no afterpulse conditions:
 Only afterpulse conditions (1-9):
 11532338531287189321621638311353172611242114316714382513525142415246217111231326129512458528114371211224412
 
-#+begin_src python :results file append :var plot1="./img/afterPulse01.pdf" plot2="./img/afterPulse02.pdf"
+#+begin_src python :results file append :var plot1="./img/afterPulse01.pdf" plot2="./img/afterPulse02.pdf" plot2r="./img/afterPulse02r.pdf"
   import matplotlib.pyplot as plt
+  import ROOT as rt
 
   str1 = "00000010000000001000202000020000000000000010001000000010002300000100300000002000200001000000000000000000200000010000200000000200100200000000001020012000000000000000000000000000000000200000000010000020000000002"
 
@@ -261,11 +262,26 @@ Only afterpulse conditions (1-9):
   plt.xticks(range(1, 10))
   plt.title("afterPulse2")
   plt.savefig(plot2)
-  return(plot2)
+  # return(plot2)
+
+  c1 = rt.TCanvas("c1", "afterPulse2", 800, 600)
+  f1 = rt.TF1("f1", "[0]*exp([1]*x)+[2]", 0, 10)
+  f1.SetParameters(40, -0.3, 0)
+  h1 = rt.TH1F("h1", "afterPulse2", 9, 0.5, 9.5)
+  for str in str2:
+      h1.Fill(int(str))
+
+  h1.Fit(f1)
+  rt.gStyle.SetOptFit(1111)
+  h1.Draw()
+  f1.Draw("SAME")
+  c1.SaveAs(plot2r)
+  return(plot2r)
 
 #+end_src
 
 #+RESULTS:
+[[file:./img/afterPulse02r.pdf]]
 [[file:./img/afterPulse01.pdf]]
 [[file:./img/afterPulse02.pdf]]
 

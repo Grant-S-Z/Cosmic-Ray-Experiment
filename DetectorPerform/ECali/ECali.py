@@ -52,6 +52,7 @@ fe=f.GetParameter("Sigma")*DE/meanqq**2
 #f=8.66e10 (MeV*s^-1*mV^*1)
 print(meanqq,hq.GetMeanError())
 print(fp,fe)
+print("Energy resolution:", fp/fe)
 L=1.5
 [L0,L0e]=[1.6432367739667197,0.13148465514315455]
 
