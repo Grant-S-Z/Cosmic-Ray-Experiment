@@ -1,4 +1,4 @@
-% Created 2024-10-24 Thu 17:07
+% Created 2024-10-24 Thu 20:58
 % Intended LaTeX compiler: xelatex
 
 \documentclass[10pt]{beamer}
@@ -6,11 +6,11 @@
 % fonts
 \usepackage{ctex}
 \usepackage{fontspec}
-% \setmainfont{Times New Roman}
-% \setmonofont{Inconsolata}
-% \setsansfont{Times New Roman}
-% \setCJKmainfont{SimSong}
-% \setCJKsansfont{SimSong}
+\setmainfont{Times New Roman}
+\setmonofont{Inconsolata}
+\setsansfont{Times New Roman}
+\setCJKmainfont{SimSong}
+\setCJKsansfont{SimSong}
 
 \usepackage{amsfonts}
 \usepackage{amsthm}
@@ -39,9 +39,9 @@
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 \usetheme[block=fill, progressbar=frametitle]{metropolis}
-% \useoutertheme{infolines} % 采用 infoline
-% \useinnertheme{default}
-% \usecolortheme{custom} % 使用 custom 颜色主题
+\useoutertheme{infolines} % 采用 infoline
+\useinnertheme{default}
+\usecolortheme{custom} % 使用 custom 颜色主题
 \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{items}[circle] % circle item symbol
 \setbeamertemplate{sections/subsections in toc}[ball] % ball section symbol
@@ -69,12 +69,12 @@ linkcolor=black
 \begin{document}
 
 \maketitle
-\begin{frame}[label={sec:orgba24ec1}]{目录}
+\begin{frame}[label={sec:org55f963c}]{目录}
 \tableofcontents
 \end{frame}
-\section{实验内容}
-\label{sec:org8985ec5}
-\begin{frame}[label={sec:org1c7c6fd}]{实验目标}
+\section{实验目标}
+\label{sec:org09833dd}
+\begin{frame}[label={sec:org608b27f}]{实验目标}
 \begin{enumerate}
 \item 重新测量 \(\mu\) 信号与余波的一些参数；
 \item 测量单光子电荷；
@@ -83,8 +83,8 @@ linkcolor=black
 \end{enumerate}
 \end{frame}
 \section{实验装置}
-\label{sec:org0b80238}
-\begin{frame}[label={sec:org1295a78}]{实验装置}
+\label{sec:orgedd1efa}
+\begin{frame}[label={sec:org7e65136}]{实验装置}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{img/Ex02_20241024164303.png}
@@ -92,8 +92,8 @@ linkcolor=black
 \end{figure}
 \end{frame}
 \section{实验结果}
-\label{sec:orgb264ad9}
-\begin{frame}[label={sec:org416cb2e}]{\(\mu\) 信号测量}
+\label{sec:org3268965}
+\begin{frame}[label={sec:org3ca4ce0}]{\(\mu\) 信号测量}
 使用甄别器的 4、7 道（甄别电压 \qty{15}{mV}），测量符合信号。\footnote{后续实验条件不变.}
 
 \begin{itemize}
@@ -121,7 +121,7 @@ n_a = \qty{0.176}{min^{-1}}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:org748ef9b}]{\(\mu\) 信号测量}
+\begin{frame}[label={sec:org336ccb9}]{\(\mu\) 信号测量}
 对闪烁体, 测得长 60.5cm, 宽 15.5cm, 由此可计算 \(\mu\) 通量:
 
 \begin{equation}
@@ -130,14 +130,14 @@ n_a = \qty{0.176}{min^{-1}}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:orgcc25359}]{余波时间分布}
+\begin{frame}[label={sec:orgd704c4b}]{余波时间分布}
 余波出现的概率为 13.9\%.
 
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{../../img/afterPulse01.pdf}
+\includegraphics[width=0.9\textwidth]{../../DetectorPerform/afterPulse/fig/afterPulse01.pdf}
 \caption{所有信号的余波分布}
 \end{figure}
 \end{column}
@@ -145,24 +145,24 @@ n_a = \qty{0.176}{min^{-1}}.
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{../../img/afterPulse02.pdf}
+\includegraphics[width=0.9\textwidth]{../../DetectorPerform/afterPulse/fig/afterPulse02.pdf}
 \caption{存在余波信号的余波分布}
 \end{figure}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org60cad64}]{余波时间分布}
+\begin{frame}[label={sec:org8d0e738}]{余波时间分布}
 余波时间分布比较符合指数规律, 对其作拟合得到:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{../../img/afterPulse02r.pdf}
+\includegraphics[width=0.6\textwidth]{../../DetectorPerform/afterPulse/fig/afterPulse02r.pdf}
 \caption{余波分布拟合}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orgb3c9fe6}]{单光子电荷}
+\begin{frame}[label={sec:orgb7cd91f}]{单光子电荷}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{../../DetectorPerform/SPhoton/SphotonCharge.pdf}
@@ -176,12 +176,12 @@ q = (1.560 \pm 0.245)\times\qty{e-11}{V\cdot s}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:orgfcb3e5f}]{衰减长度}
+\begin{frame}[label={sec:orga84c383}]{衰减长度}
 考虑 Error Bar, 重新计算衰减长度\footnote{不确定度优于上次结果 (0.1494m).}与相关系数:
 \begin{align}
 \label{eq:3}
-L &= 1.596 \pm \qty{0.128}{m} \\
-\rho &= 0.442.
+L &= 1.643 \pm \qty{0.131}{m} \\
+R^2 &= 0.442.
 \end{align}
 
 \begin{columns}
@@ -203,7 +203,7 @@ L &= 1.596 \pm \qty{0.128}{m} \\
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org732602a}]{能量刻度}
+\begin{frame}[label={sec:org1764341}]{能量刻度}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{../../DetectorPerform/ECali/qqdist.pdf}
@@ -218,7 +218,7 @@ L &= 1.596 \pm \qty{0.128}{m} \\
 \end{frame}
 
 
-\begin{frame}[label={sec:org6b888d2}]{\(\mu\) 寿命}
+\begin{frame}[label={sec:org9740b1e}]{\(\mu\) 寿命}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]
@@ -238,13 +238,16 @@ L &= 1.596 \pm \qty{0.128}{m} \\
 \end{columns}
 \end{frame}
 
-\begin{frame}{\(\mu\) 寿命}
-    此外分析这一部分数据的时间电荷分布，同样服从线性分布：
-    $$R^2=0.239.$$
-    \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1.0\textwidth]{../../DetectorPerform/ReAttenuationLength/figs/AttenuationLength.pdf}
-    \caption{衰减长度}
-    \end{figure}
-    \end{frame}
+\begin{frame}[label={sec:org90e98c7}]{\(\mu\) 寿命}
+同时观察这一部分事例的时间电荷分布, 同样服从线性分布, 且:
+\begin{equation}
+\label{eq:8}
+R^2 = 0.239
+\end{equation}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{../../DetectorPerform/AttenuationLength/figs/ReAttenuationLength.pdf}
+\caption{时间电荷分布}
+\end{figure}
+\end{frame}
 \end{document}
