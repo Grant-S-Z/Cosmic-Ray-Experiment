@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-[SphotonCharge,SphotonError]=[1.5601533398631982e-11,2.4512332553841934e-12]
+[SphotonCharge,SphotonError]=[93558636508.93161,27594809057.003414]
 def ChargeIntergral(FilePath,CHName):
     # Read data
     wave=pd.read_csv(FilePath)
@@ -32,28 +32,31 @@ for i in range(0,101):
     FilePath="../../ExperimentData/Ecali/ecali"+str(i)+".csv"
     q1=ChargeIntergral(FilePath,"CH1V")
     q2=ChargeIntergral(FilePath,"CH2V")
-    print(q1,q1)
+ #   print(q1,q1)
     hq.Fill(np.sqrt(q1*q2))
 
+rt.gStyle.SetOptFit(1111)
+f=rt.TF1("f","gaus",0,2.5e-10)
+hq.Fit(f,"","",0,2.5e-10)
 c1=rt.TCanvas()
 hq.SetXTitle("#sqrt(q_{1}q_{2}) (V*s)")
 hq.SetYTitle("count/2#times 10^{-11} (V*s)")
 hq.Draw()
 c1.SaveAs("qqdist.pdf")
 
-meanqq=hq.GetMean()
+meanqq=f.GetParameter("Mean")
 depth=5
 DE=1.936*1.03*5
-f=DE/meanqq
-fe=hq.GetStdDev()*DE/meanqq**2
+fp=DE/meanqq
+fe=f.GetParameter("Sigma")*DE/meanqq**2
 #f=8.66e10 (MeV*s^-1*mV^*1)
 print(meanqq,hq.GetMeanError())
-print(f,fe)
+print(fp,fe)
 L=1.5
 [L0,L0e]=[1.6432367739667197,0.13148465514315455]
 
-PE=f*SphotonCharge*np.exp(L/2/L0)
-PEE=PE*np.sqrt((fe/f)**2+(SphotonError/SphotonCharge)**2+(L/2/L0**2*L0e)**2)
+PE=fp*SphotonCharge*np.exp(L/2/L0)
+PEE=PE*np.sqrt((fe/fp)**2+(SphotonError/SphotonCharge)**2+(L/2/L0**2*L0e)**2)
 print(PE,PEE)
 
 

@@ -27,7 +27,7 @@ def ChargeIntergral(FilePath,CHName):
     for j in range(iterbegin, iterend):
         delta_t = t[j + 1] - t[j]
         Q += delta_t * (BaseLine - ch[j])
-        Qvar += delta_t*BLError**2
+        Qvar += delta_t**2*BLError**2
     # Calculate the Charge Error Because of baseline
     QError=np.sqrt(Qvar)
     return [Q,QError]     
@@ -45,11 +45,15 @@ SphotonCharge=np.average(y.data())
 SphotonError=np.std(y.data())
 print(SphotonCharge,SphotonError)
 a=rt.TGraphErrors(8,x.data(),y.data(),xe.data(),ye.data())
-a.SaveAs("SphotonCharge.pdf")
+#a.SaveAs("SphotonCharge.pdf")
 a.SetTitle("SphotonChargeDistribution")
 a.SetMarkerColor(4)
 a.SetMarkerStyle(21)
-a.Draw("ALP")
+c1=rt.TCanvas()
+a.GetYaxis().SetLimits(0,3e-11)
+a.Draw("AP")
+
+c1.SaveAs("SphotonCharge.pdf")
 
 #[SphotonCharge,SphotonError]=[1.5601533398631982e-11,2.4512332553841934e-12]
 
