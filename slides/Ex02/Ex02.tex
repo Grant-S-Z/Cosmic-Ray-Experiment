@@ -1,4 +1,4 @@
-% Created 2024-10-24 Thu 20:58
+% Created 2024-10-24 Thu 21:54
 % Intended LaTeX compiler: xelatex
 
 \documentclass[10pt]{beamer}
@@ -69,12 +69,12 @@ linkcolor=black
 \begin{document}
 
 \maketitle
-\begin{frame}[label={sec:org55f963c}]{目录}
+\begin{frame}[label={sec:orgc8b829d}]{目录}
 \tableofcontents
 \end{frame}
 \section{实验目标}
-\label{sec:org09833dd}
-\begin{frame}[label={sec:org608b27f}]{实验目标}
+\label{sec:orgecfc580}
+\begin{frame}[label={sec:org3fb5f92}]{实验目标}
 \begin{enumerate}
 \item 重新测量 \(\mu\) 信号与余波的一些参数；
 \item 测量单光子电荷；
@@ -83,8 +83,8 @@ linkcolor=black
 \end{enumerate}
 \end{frame}
 \section{实验装置}
-\label{sec:orgedd1efa}
-\begin{frame}[label={sec:org7e65136}]{实验装置}
+\label{sec:org7a010b4}
+\begin{frame}[label={sec:org1e458bd}]{实验装置}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{img/Ex02_20241024164303.png}
@@ -92,8 +92,8 @@ linkcolor=black
 \end{figure}
 \end{frame}
 \section{实验结果}
-\label{sec:org3268965}
-\begin{frame}[label={sec:org3ca4ce0}]{\(\mu\) 信号测量}
+\label{sec:org78c204c}
+\begin{frame}[label={sec:orgf820682}]{\(\mu\) 信号测量}
 使用甄别器的 4、7 道（甄别电压 \qty{15}{mV}），测量符合信号。\footnote{后续实验条件不变.}
 
 \begin{itemize}
@@ -121,7 +121,7 @@ n_a = \qty{0.176}{min^{-1}}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:org336ccb9}]{\(\mu\) 信号测量}
+\begin{frame}[label={sec:org4b1a9ae}]{\(\mu\) 信号测量}
 对闪烁体, 测得长 60.5cm, 宽 15.5cm, 由此可计算 \(\mu\) 通量:
 
 \begin{equation}
@@ -130,7 +130,7 @@ n_a = \qty{0.176}{min^{-1}}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:orgd704c4b}]{余波时间分布}
+\begin{frame}[label={sec:orgbc923ce}]{余波时间分布}
 余波出现的概率为 13.9\%.
 
 \begin{columns}
@@ -152,7 +152,7 @@ n_a = \qty{0.176}{min^{-1}}.
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org8d0e738}]{余波时间分布}
+\begin{frame}[label={sec:orge7ea5e6}]{余波时间分布}
 余波时间分布比较符合指数规律, 对其作拟合得到:
 
 \begin{figure}[htbp]
@@ -162,7 +162,7 @@ n_a = \qty{0.176}{min^{-1}}.
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orgb7cd91f}]{单光子电荷}
+\begin{frame}[label={sec:orgf598c09}]{单光子电荷}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{../../DetectorPerform/SPhoton/SphotonCharge.pdf}
@@ -176,7 +176,7 @@ q = (1.560 \pm 0.245)\times\qty{e-11}{V\cdot s}.
 \end{equation}
 \end{frame}
 
-\begin{frame}[label={sec:orga84c383}]{衰减长度}
+\begin{frame}[label={sec:org59e76f3}]{衰减长度}
 考虑 Error Bar, 重新计算衰减长度\footnote{不确定度优于上次结果 (0.1494m).}与相关系数:
 \begin{align}
 \label{eq:3}
@@ -203,22 +203,24 @@ R^2 &= 0.442.
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org1764341}]{能量刻度}
+\begin{frame}[label={sec:orgb644da9}]{能量刻度}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{../../DetectorPerform/ECali/qqdist.pdf}
 \caption{能量刻度}
 \end{figure}
 
-能量分辨率为:
+\begin{itemize}
+\item 刻度系数为 \num{9.356e10}.
+\item 能量分辨率为
 \begin{equation}
 \label{eq:4}
 \frac{2.35\sigma}{\mu} = \frac{\num{7.386e-11}}{\num{1.066e-10}} = 69.3\%.
 \end{equation}
+\end{itemize}
 \end{frame}
 
-
-\begin{frame}[label={sec:org9740b1e}]{\(\mu\) 寿命}
+\begin{frame}[label={sec:org7209cb1}]{\(\mu\) 寿命}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]
@@ -238,11 +240,11 @@ R^2 &= 0.442.
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org90e98c7}]{\(\mu\) 寿命}
+\begin{frame}[label={sec:orgdab201b}]{\(\mu\) 寿命}
 同时观察这一部分事例的时间电荷分布, 同样服从线性分布, 且:
 \begin{equation}
 \label{eq:8}
-R^2 = 0.239
+R^2 = 0.239.
 \end{equation}
 \begin{figure}[htbp]
 \centering

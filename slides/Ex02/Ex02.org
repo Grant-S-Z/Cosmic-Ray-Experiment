@@ -148,12 +148,12 @@ R^2 &= 0.442.
 #+caption: 能量刻度
 [[../../DetectorPerform/ECali/qqdist.pdf]]
 
-能量分辨率为:
-\begin{equation}
-\label{eq:4}
-\frac{2.35\sigma}{\mu} = \frac{\num{7.386e-11}}{\num{1.066e-10}} = 69.3\%.
-\end{equation}
-
+- 刻度系数为 \num{9.356e10}.
+- 能量分辨率为
+  \begin{equation}
+  \label{eq:4}
+  \frac{2.35\sigma}{\mu} = \frac{\num{7.386e-11}}{\num{1.066e-10}} = 69.3\%.
+  \end{equation}
 
 ** \mu 寿命
 *** pic :BMCOL:
@@ -188,7 +188,6 @@ R^2 = 0.239.
 \caption{时间电荷分布}
 \end{figure}
 #+end_export
-
 
 * Footnotes
 [fn:2]不确定度优于上次结果 (0.1494m).
