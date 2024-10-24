@@ -52,7 +52,7 @@ a.SetMarkerStyle(21)
 c1=rt.TCanvas()
 a.GetYaxis().SetLimits(0,3e-11)
 a.GetYaxis().SetTitle("Charge (V#cdot s)")
-a.GetYaxis().SetTitle("Event")
+a.GetXaxis().SetTitle("Event")
 a.Draw("AP")
 
 c1.SaveAs("SphotonCharge.pdf")
