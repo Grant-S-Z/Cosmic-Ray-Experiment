@@ -29,7 +29,7 @@ def ChargeIntergral(FilePath,CHName):
 
 hq=rt.TH1F("Energy","Energy",20,0,4e-10)
 for i in range(0,101):
-    FilePath="../../ExperimentData/Ecali/ecali"+str(i)+".csv"
+    FilePath="../../ExperimentData/Ecali/ecali "+str(i)+".csv"
     q1=ChargeIntergral(FilePath,"CH1V")
     q2=ChargeIntergral(FilePath,"CH2V")
  #   print(q1,q1)
