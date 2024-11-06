@@ -25,24 +25,25 @@ def ChargeIntergral(FilePath,CHName):
         delta_t = t[j + 1] - t[j]
         Q += delta_t * (BaseLine - ch[j])
     # Calculate the Charge Error Because of baseline
+    print(Q)
     return Q
 
-hq=rt.TH1F("Energy","Energy",20,0,4e-10)
-for i in range(0,101):
-    FilePath="../../ExperimentData/ECali/ecali"+str(i)+".csv"
+hq=rt.TH1F("Energy","Energy",20,0,5e-9)
+for i in range(0,100):
+    FilePath="../../ExperimentData/ECali/mu"+str(i)+".csv"
     q1=ChargeIntergral(FilePath,"CH1V")
     q2=ChargeIntergral(FilePath,"CH2V")
  #   print(q1,q1)
     hq.Fill(np.sqrt(q1*q2))
 
 rt.gStyle.SetOptFit(1111)
-f=rt.TF1("f","gaus",0,2.5e-10)
-hq.Fit(f,"","",0,2.5e-10)
+f=rt.TF1("f","gaus",1e-9,4e-9)
+hq.Fit(f,"","",1e-9,4e-9)
 c1=rt.TCanvas()
 hq.SetXTitle("#sqrt(q_{1}q_{2}) (V*s)")
-hq.SetYTitle("count/2#times 10^{-11} (V*s)")
+hq.SetYTitle("count/2.5#times 10^{-10} (V*s)")
 hq.Draw()
-c1.SaveAs("qqEdist.pdf")
+c1.SaveAs("reqqdist.pdf")
 
 meanqq=f.GetParameter("Mean")
 depth=5
@@ -50,6 +51,7 @@ DE=1.936*1.03*5
 fp=DE/meanqq
 fe=f.GetParameter("Sigma")*DE/meanqq**2
 #f=8.66e10 (MeV*s^-1*mV^*1)
+#f=5016837581.882691 
 print(meanqq,hq.GetMeanError())
 print(fp,fe)
 print("Energy resolution:", fp/fe)
