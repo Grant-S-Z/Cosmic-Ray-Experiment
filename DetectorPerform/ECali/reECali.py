@@ -4,6 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 [SphotonCharge,SphotonError]=[93558636508.93161,27594809057.003414]
+L = 1.5
+L0 = 1.16
 def ChargeIntergral(FilePath,CHName):
     # Read data
     wave=pd.read_csv(FilePath)
@@ -25,16 +27,19 @@ def ChargeIntergral(FilePath,CHName):
         delta_t = t[j + 1] - t[j]
         Q += delta_t * (BaseLine - ch[j])
     # Calculate the Charge Error Because of baseline
-    print(Q)
-    return Q
+    print(Q) 
+    return [Q,t[iterbegin]]
 
 hq=rt.TH1F("Energy","Energy",20,0,5e-9)
 for i in range(0,100):
     FilePath="../../ExperimentData/ECali/mu"+str(i)+".csv"
-    q1=ChargeIntergral(FilePath,"CH1V")
-    q2=ChargeIntergral(FilePath,"CH2V")
+    [q1,t1]=ChargeIntergral(FilePath,"CH1V")
+    [q2,t2]=ChargeIntergral(FilePath,"CH2V")
  #   print(q1,q1)
-    hq.Fill(np.sqrt(q1*q2))
+    ddt = t1 - t2
+    dlogq = np.log(q1 / q2)
+    if (dlogq > -0.1 )& (dlogq<2) &(ddt+dlogq*6.3e-9>-2e-9):
+        hq.Fill(np.sqrt(q1*q2))
 
 rt.gStyle.SetOptFit(1111)
 f=rt.TF1("f","gaus",1e-9,4e-9)

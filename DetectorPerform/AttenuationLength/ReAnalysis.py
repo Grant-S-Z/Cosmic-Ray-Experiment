@@ -51,7 +51,7 @@ L0 = 0.83
 p = np.exp(-1 * DetectorLength / L0)
 for i in range(100):
     # Read csv files
-    FilePath = "../../ExperimentData/Ecali/ecali" + str(i) + ".csv"
+    FilePath = "../../ExperimentData/ECali/mu" + str(i) + ".csv"
     [q1, q1e, t1] = ChargeIntergral(FilePath, "CH1V")
     [q2, q2e, t2] = ChargeIntergral(FilePath, "CH2V")
     ddt = t1 - t2
@@ -59,7 +59,7 @@ for i in range(100):
     dlogq = np.log(q1 / q2)
     p1 = np.sqrt(q1 / q2 * np.exp(-L / L0))
     p2 = p1 * q2 / p1
-    if (ddt < 1e-8 )& (dlogq<0.9) & (ddt > -11e-9):
+    if (dlogq > -0.1 )& (dlogq<2) &(ddt+dlogq*6.3e-9>-2e-9):
         N = q1 / p1 / SphotonCharge
         # print(q1,q2,N)
         dloge = np.sqrt(
@@ -75,10 +75,10 @@ gr = rt.TGraphErrors(90, logq.data(), delta_t.data(), logqe.data(), delta_te.dat
 gr.SetTitle("AttenuationLength")
 gr.GetXaxis().SetTitle("log(q_{1}/q_{2})")
 gr.GetYaxis().SetTitle("t_{1}-t_{2} (s)")
-f = rt.TF1("f", "[0]*x+[1]", -2, 2)
-f.SetParameter(1, -5e-9)
-f.FixParameter(0, -1.5858722569453823 / 3e8 * 1.583)
-f.SetParLimits(1, -1e-8, 0)
+f = rt.TF1("f", "[0]*x+[1]", 0, 1.5)
+f.SetParameter(1, 1e-9)
+f.SetParameter(0, -1.5858722569453823 / 3e8 * 1.583)
+f.SetParLimits(1, 0, 5e-9)
 gr.Fit(f)
 LL0 = -f.GetParameter(0) * 3e8 / 1.583
 LL0e = f.GetParError(0) * 3e8 / 1.583
@@ -88,7 +88,7 @@ print("AttenuationLength", LL0, "\nError", LL0e, "\nCorrelationFactor", rho**2)
 c1 = rt.TCanvas()
 rt.gStyle.SetOptFit(1111)
 gr.Draw("AP")
-c1.SaveAs("figs/ReAttenuationLength.pdf")
+c1.SaveAs("figs/ReReAttenuationLength.pdf")
 
 
 # dt = t1 - t2
