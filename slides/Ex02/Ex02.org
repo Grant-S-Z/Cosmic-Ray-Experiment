@@ -135,7 +135,7 @@ R^2 &= 0.442.
 #+caption: 衰减长度
 [[../../DetectorPerform/AttenuationLength/figs/Dist.png]]
 
-***  pic2 :BMCOL:
+*** pic2 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:

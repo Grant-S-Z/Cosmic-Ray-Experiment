@@ -85,10 +85,10 @@ LL0e = f.GetParError(0) * 3e8 / 1.583
 rho = gr.GetCorrelationFactor()
 print("AttenuationLength", LL0, "\nError", LL0e, "\nCorrelationFactor", rho**2)
 
-c1 = rt.TCanvas()
-rt.gStyle.SetOptFit(1111)
-gr.Draw("AP")
-c1.SaveAs("figs/ReReAttenuationLength.pdf")
+# c1 = rt.TCanvas()
+# rt.gStyle.SetOptFit(1111)
+# gr.Draw("AP")
+# c1.SaveAs("figs/ReReAttenuationLength.pdf")
 
 
 # dt = t1 - t2

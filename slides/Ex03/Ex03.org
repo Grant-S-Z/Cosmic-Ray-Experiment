@@ -1,0 +1,97 @@
+#+LANGUAGE: cn
+#+OPTIONS: H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+startup: beamer
+
+#+LATEX_CLASS: beamer
+
+#+LATEX_HEADER: \usepackage{etoolbox}
+#+LATEX_HEADER: \usepackage{pgfopts}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[scale=2]{ccicons}
+
+#+LATEX_HEADER: \usetheme[block=fill, progressbar=frametitle]{metropolis}
+#+LATEX_HEADER: \useoutertheme{infolines} % 采用 infoline
+#+LATEX_HEADER: \useinnertheme{default}
+#+LATEX_HEADER: \usecolortheme{custom} % 使用 custom 颜色主题
+
+#+LATEX_HEADER: \setbeamertemplate{blocks}[rounded][shadow=false]
+#+LATEX_HEADER: \setbeamertemplate{items}[circle] % circle item symbol
+#+LATEX_HEADER: \setbeamertemplate{sections/subsections in toc}[ball] % ball section symbol
+#+LATEX_HEADER: \setbeamertemplate{headline}[default] % 不使用 infoline 的 headline
+#+LATEX_HEADER: %\setbeamertemplate{footline}[default] % 使用 infoline 的 footline
+#+LATEX_HEADER: \setbeamertemplate{frame numbering}[none]
+#+LATEX_HEADER: \setbeamertemplate{bibliography item}[text] % 使用 text 的 references 形式
+#+LATEX_HEADER: %\setbeamerfont{footnote}{\tiny} % 可选择 tiny footnote
+
+#+TITLE: Michel电子能谱测量
+#+SUBTITLE: 宇宙线粒子探测与物理实验
+#+AUTHOR: 王亚朋 \quad 报告人: 朱宇涛
+#+DATE: 2024年 11 月 7日
+** 目录
+#+begin_export latex
+\tableofcontents
+#+end_export
+
+* 实验内容
+** 实验内容
+1. 在左右两端电压 1500V 且甄别阈 25mV 的实验条件下, 重新测量了衰减长度和能量刻度.
+2. 在相同实验条件下测量了 Michel 电子能谱.
+* 实验结果
+** 衰减长度
+
+#+attr_latex: :width 0.5\textwidth
+#+caption: 衰减长度
+[[../../DetectorPerform/AttenuationLength/figs/ReReAttenuationLength.pdf]]
+
+衰减长度和相关系数:
+\begin{align*}
+L_0 &= 1.162 \pm \qty{0.027}{m} \\
+R^2 &= 0.684.
+\end{align*}
+
+** 能量刻度
+由于测量 Michel 电子能谱时重新调节左右两端电压均为 1500V 且甄别阈为 25mV, 故需要重新进行能量刻度.
+
+挑选 100 个 \mu 信号进行刻度得到:
+
+*** Picture :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+attr_latex: :width 1.0\textwidth
+#+caption: 能量刻度
+[[../../DetectorPerform/ECali/reqqdist.pdf]]
+
+*** Content :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+- 刻度系数为 \num{5.017e9}.
+- 能量分辨率为
+  \begin{equation*}
+  \frac{2.35\sigma}{\mu} = \frac{\num{4.305e-10}}{\num{1.987e-09}} = 21.7\%.
+  \end{equation*}
+** Michel 电子能谱
+- 理论上, Michel 电子能谱应当服从 Beta 分布[fn:1].
+- 实验得到的 Michel 左侧部分不符合, 可能与能量刻度左侧的峰对应.
+
+*** Picture1 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.9\textwidth
+#+caption: Michel 电子能谱
+[[../../mu/michel/michel.pdf]]
+
+*** Picture2 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.8\textwidth
+#+caption: Michel 电子能谱(MicroBooNE)
+[[../../img/michelPaper.pdf]]
+
+* Footnotes
+[fn:1]https://dspace.mit.edu/bitstream/handle/1721.1/121063/1704.02927.pdf 

@@ -116,7 +116,6 @@ i_{dark} \sim T^{5/4}e^{-\frac{e\psi}{kT}}.
 *** 衰减长度
 
 * 实验 <2024-10-20 Sun>
-
 测量单光子电荷，重新测量噪声并用新方法测量衰减长度。
 ** 单光子电荷
 电压：1500V.
@@ -403,12 +402,15 @@ bin: 0-18, 2.
 [[file:./img/lifeTimeHist.pdf]]
 
 ** Michel Electron
-* 物理实验 1
-测量宇宙线 \mu 通量和角分布。
-* 物理实验 2
-测量 \mu 寿命。
-* 物理实验 3
-Michael 电子能谱测量。
+* 实验 <2024-11-05 Tue>
+测量 Michel 电子能谱.
+** 实验技巧
+- 内存.
+- trigger: 第 N 边沿.
+
+* 实验
+测量角分布.
+
 * References
 1. [[https://era.library.ualberta.ca/items/10813ee8-3b2e-416c-88d2-62ebc976b606/view/648bb639-4b0b-448f-9042-80818bc9fa6a/Singhrao_Kamal_201509_MSc.pdf]]
 2. [[https://cosmic.lbl.gov/SKliewer/Cosmic_Rays/Muons.htm]]
