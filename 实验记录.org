@@ -409,9 +409,16 @@ bin: 0-18, 2.
 - trigger: 第 N 边沿.
 
 * 实验
-测量角分布.
+1. 三重符合, 根据中间的闪烁体结果重新刻度, 并重新测量 \mu 寿命和 Michel 电子能谱
+2. 甄别阈的选取原因
+3. 测量角分布
+4. 分析波形
 
 * References
-1. [[https://era.library.ualberta.ca/items/10813ee8-3b2e-416c-88d2-62ebc976b606/view/648bb639-4b0b-448f-9042-80818bc9fa6a/Singhrao_Kamal_201509_MSc.pdf]]
-2. [[https://cosmic.lbl.gov/SKliewer/Cosmic_Rays/Muons.htm]]
-3. [[https://hep.tsinghua.edu.cn/training/cosmicRay/index.html]]
+1. https://era.library.ualberta.ca/items/10813ee8-3b2e-416c-88d2-62ebc976b606/view/648bb639-4b0b-448f-9042-80818bc9fa6a/Singhrao_Kamal_201509_MSc.pdf
+2. https://cosmic.lbl.gov/SKliewer/Cosmic_Rays/Muons.htm
+3. https://hep.tsinghua.edu.cn/training/cosmicRay/index.html
+
+* Footnotes
+
+[fn:1]Michel 电子可能不会完全沉积. 
