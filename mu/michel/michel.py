@@ -3,15 +3,18 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-[SphotonCharge,SphotonError]=[93558636508.93161,27594809057.003414]
+[charge1,charge3]=[34.5792709098031,15.09586244820734]
+f=0.005304349336481847
+
 def ChargeIntergral(FilePath,CHName):
     # Read data
     wave=pd.read_csv(FilePath)
     t = wave['Time(s)'].values
     ch = wave[CHName].values
     BaseLine = np.average(ch[700:1000]) #BaseLine
-    min = np.min(ch)
-    miniter = np.argmin(ch)
+    min = np.min(ch[400:500])
+    miniter = np.argmin(ch[400:500])+400
+    # print(min,miniter)
     # Traverse arrays to find the integral interval
     Thd = ch - (0.1 * min + 0.9 * BaseLine)
     [iterbegin,iterend]=[miniter,miniter]
@@ -25,14 +28,12 @@ def ChargeIntergral(FilePath,CHName):
         delta_t = t[j + 1] - t[j]
         Q += delta_t * (BaseLine - ch[j])
     # Calculate the Charge Error Because of baseline
-    print(Q)
-    return Q
+    # print(Q)
+    return Q*1e12
 
-f=5016837581.882691 
-
-hq=rt.TH1F("Energy","Energy",10,0,50)
-for i in range(5,47):
-    FilePath="../../ExperimentData/michel/mu"+str(i)+".csv"
+hq=rt.TH1F("Energy","Energy",24,0,60)
+for i in range(0,50):
+    FilePath="../../ExperimentData/michel/michel/mudecay"+str(i)+".csv"
     q1=ChargeIntergral(FilePath,"CH1V")
     q2=ChargeIntergral(FilePath,"CH2V")
  #   print(q1,q1)
