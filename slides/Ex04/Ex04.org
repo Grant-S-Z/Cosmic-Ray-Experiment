@@ -1,0 +1,135 @@
+#+OPTIONS: H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+LATEX_CLASS: beamer
+#+LATEX_HEADER: \usepackage{etoolbox}
+#+LATEX_HEADER: \usepackage{pgfopts}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[scale=2]{ccicons}
+#+LATEX_HEADER: \usetheme[block=fill, progressbar=frametitle]{metropolis}
+#+LATEX_HEADER: \useoutertheme{infolines} % infoline
+#+LATEX_HEADER: \useinnertheme{default}
+#+LATEX_HEADER: \usecolortheme{custom} % custom color theme
+#+LATEX_HEADER: \setbeamertemplate{blocks}[rounded][shadow=false]
+#+LATEX_HEADER: \setbeamertemplate{items}[circle] % circle item symbol
+#+LATEX_HEADER: \setbeamertemplate{sections/subsections in toc}[ball] % ball section symbol
+#+LATEX_HEADER: \setbeamertemplate{headline}[default] % no infoline headline
+#+LATEX_HEADER: %\setbeamertemplate{footline}[default] % infoline footline
+#+LATEX_HEADER: \setbeamertemplate{frame numbering}[none]
+#+LATEX_HEADER: \setbeamertemplate{bibliography item}[text] % text references
+#+LATEX_HEADER: %\setbeamerfont{footnote}{\tiny} % tiny footnote
+#+TITLE: 能量刻度与飞行时间测量
+#+SUBTITLE: 宇宙线粒子探测与物理实验
+#+AUTHOR: 朱宇涛 \quad 报告人: 王亚朋
+#+DATE: 2024年 11 月 21日
+** COMMENT 目录
+#+begin_export latex
+  \tableofcontents
+#+end_export
+
+* 实验内容
+** 实验内容
+1. 单光子电荷与能量刻度;
+2. 余波;
+3. Michel 电子能谱与 \mu 寿命;
+4. \mu 飞行时间.
+** 单光子电荷
+在 4 路电压均为 1500V, 15mV 甄别阈下重新测量了单光子电荷.
+#+attr_latex: :width 0.5\textwidth
+#+caption: 单光子电荷
+[[../../DetectorPerform/SPhoton/SphotonCharge.pdf]]
+根据 \(G = q/(Re)\) 计算得到:
+- \(G_1 = (4.322 \pm 0.152) \times 10^7\).
+- \(G_2 = (1.887 \pm 0.097) \times 10^7\).
+
+** 能量刻度
+#+attr_latex: :width 0.5\textwidth
+#+caption: 能量刻度
+[[../../DetectorPerform/ECali/qqEdist.pdf]]
+- 刻度系数: \(f = \qty{1.879e3}{MeV \cdot V^{-1} \cdot s^{-1}}\).
+- 能量分辨率: 72.3%.
+- 光产额:
+  + \(N_1 = e^{L/2L_0} / (q_1 f) = \num{1.997e7}\).
+  + \(N_2 = e^{L/2L_0} / (q_2 f) = \num{4.573e7}\).
+
+** \mu 余波
+通过对 \mu 余波的测量得知:
+- 出现余波的概率为 5% ~ 10%;
+- 余波的时间分布集中在 0 ~ 3 \unit{\mu s};
+- 余波的幅值集中在 30 ~ 70 \unit{mV}.
+
+** Michel 电子能谱
+在电压 1500V, 80mV 甄别阈[fn:1]条件下重新测量 Michel 电子能谱.
+*** pic1 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.9\textwidth
+#+caption: 典型信号
+[[../../ExperimentData/michel/michel/mudecay0.png]]
+
+*** pic2 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.9\textwidth
+#+caption: 特殊信号
+[[../../ExperimentData/michel/michel/mudecay3.png]]
+
+** Michel 电子能谱
+#+attr_latex: :width 0.5\textwidth
+#+caption: Michel 电子能谱
+[[../../mu/michel/michel.pdf]]
+能量最高达 50 MeV.
+
+** \mu 寿命
+*** picture :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.9\textwidth
+#+caption: \mu 寿命
+[[../../img/lifeHist.pdf]]
+*** content :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+用 Michel 电子测量数据估计 \mu 寿命:
+\[\tau_{\mu} = 1.227 \pm \qty{0.321}{\mu s}.\]
+
+** 飞行时间
+在两路电压为 1000V[fn:2], 100mV 甄别阈下, 通过调整两闪烁体间距测量了 \mu 飞行时间.
+
+- \mu 速度: \(v_{\mu} = (0.85 \pm 0.07) c\).
+
+*** pic1 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.9\textwidth
+#+caption: 典型信号
+[[../../ExperimentData/muspeed/muspeed/muspeed0.pdf]]
+
+*** pic2 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.9\textwidth
+#+caption: \mu 速度
+[[../../mu/muspeed/muspeed.pdf]]
+
+* 总结
+** 总结
+1. 在本学期的实验中, 我们对 \mu 和闪烁体的一些性质有了较好的理解, 对实验装置尤其是示波器的使用以及甄别阈和符合的设置有了更好的掌握, 同时也熟悉了 ROOT 等数据分析工具.
+2. 实验中我们完成了:
+   - 电子学噪声, 暗噪声, \mu 信号的观察, 区分与计数率测量;
+   - 余波的观察, 计数率与幅值测量;
+   - 单光子电荷测量与能量刻度;
+   - 衰减长度测量;
+   - \mu 寿命测量;
+   - Michel 电子能谱测量;
+   - \mu 飞行时间测量.
+3. 本实验的所有数据, 代码和报告可见 https://github.com/Grant-S-Z/CosmicRayExperiment , 敬请指正.
+* Footnotes
+[fn:2]右侧两闪烁体信号较大, 故下调电压.
+
+[fn:1]排除后脉冲. 
