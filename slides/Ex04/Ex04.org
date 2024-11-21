@@ -32,6 +32,11 @@
 2. 余波;
 3. Michel 电子能谱与 \mu 寿命;
 4. \mu 飞行时间.
+** 实验装置
+#+attr_latex: :width 0.6\textwidth
+#+caption: 实验装置
+[[../../img/instru.jpg]]
+
 ** 单光子电荷
 在 4 路电压均为 1500V, 15mV 甄别阈下重新测量了单光子电荷.
 #+attr_latex: :width 0.5\textwidth
@@ -45,15 +50,16 @@
 #+attr_latex: :width 0.5\textwidth
 #+caption: 能量刻度
 [[../../DetectorPerform/ECali/qqEdist.pdf]]
-- 刻度系数: \(f = \qty{1.879e3}{MeV \cdot V^{-1} \cdot s^{-1}}\).
+- 刻度系数: \(f = \qty{5.304e-3}{MeV \cdot mV^{-1} \cdot ns^{-1}}\).
 - 能量分辨率: 72.3%.
-- 光产额:
-  + \(N_1 = e^{L/2L_0} / (q_1 f) = \num{1.997e7}\).
-  + \(N_2 = e^{L/2L_0} / (q_2 f) = \num{4.573e7}\).
+- 光产额: \(N = e^{L/2L_0} / (q f) = \qty{13.84}{MeV^{-1}}\)
+  
+  # + \(N_1 = e^{L/2L_0} / (q_1 f) = \num{1.997e7}\).
+  # + \(N_2 = e^{L/2L_0} / (q_2 f) = \num{4.573e7}\).
 
 ** \mu 余波
 通过对 \mu 余波的测量得知:
-- 出现余波的概率为 5% ~ 10%;
+- 出现余波的概率为 10%;
 - 余波的时间分布集中在 0 ~ 3 \unit{\mu s};
 - 余波的幅值集中在 30 ~ 70 \unit{mV}.
 
@@ -73,7 +79,7 @@
 :END:
 #+attr_latex: :width 0.9\textwidth
 #+caption: 特殊信号
-[[../../ExperimentData/michel/michel/mudecay3.png]]
+[[../../ExperimentData/michel/michel/mudecay1.png]]
 
 ** Michel 电子能谱
 #+attr_latex: :width 0.5\textwidth
@@ -130,6 +136,6 @@
    - \mu 飞行时间测量.
 3. 本实验的所有数据, 代码和报告可见 https://github.com/Grant-S-Z/CosmicRayExperiment , 敬请指正.
 * Footnotes
-[fn:2]右侧两闪烁体信号较大, 故下调电压.
+[fn:2]右侧两闪烁体信号幅值较大, 故下调电压.
 
 [fn:1]排除后脉冲. 
