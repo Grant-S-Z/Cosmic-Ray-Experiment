@@ -521,7 +521,7 @@ bin: 0-10, 2.
   import numpy as np
   import ROOT as rt
 
-  exp_fit = rt.TF1("exp_fit", "[0]*exp(-x/[1])+[2]", 0, 18)
+  exp_fit = rt.TF1("exp_fit", "[0]*exp(-x/[1])+[2]", 0, 8)
   exp_fit.SetParameters(1, 2)
   life = [lifetime[1] for lifetime in lifeTime]
   h1 = rt.TH1F("h1", "lifetime", 8, 0, 8)
