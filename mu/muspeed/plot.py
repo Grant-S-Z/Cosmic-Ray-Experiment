@@ -31,7 +31,7 @@ gd1.Draw("AL")
 gd2.Draw("SAME")
 gd3.Draw("SAME")
 
-gg=rt.TLegend(0.5,0.5,0.8,0.7)
+gg=rt.TLegend(0.65,0.5,0.8,0.7)
 gg.AddEntry(gd1,"CH1","l")
 gg.AddEntry(gd2,"CH2","l")
 gg.AddEntry(gd3,"CH3","l")
